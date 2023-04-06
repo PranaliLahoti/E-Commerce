@@ -35,6 +35,11 @@ public class CategoryService {
         return categoryRepo.findById(id).isPresent();
     }
 
+    public Category getCategory(int categoryId){
+        Optional<Category> category  = categoryRepo.findById(categoryId);
+        return category.get();
+    }
+
     public void deleteCategoryById(int id) {
         categoryRepo.deleteById(id);
     }

@@ -16,16 +16,16 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    private Integer id;
 
     @NotEmpty
     @Size(min = 2,message = "category name should be at least 2 characters long")
     @Column(name="category_name")
-    String categoryName;
+    private String categoryName;
 
     @NotEmpty
     @Size(min = 2,message = "category description should be at least 5 characters long")
-    String description;
+    private String description;
 
     public Integer getId() {
         return id;

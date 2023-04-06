@@ -33,8 +33,8 @@ public class CategoryController {
     }
 
     @GetMapping(path="/categories")
-    public List<Category> getAll(){
-        return categoryService.fetchAllCategories();
+    public ResponseEntity<List<Category>> getAll(){
+        return new ResponseEntity<>(categoryService.fetchAllCategories(),HttpStatus.OK);
     }
 
     @PutMapping(path = "/categories/{id}")
