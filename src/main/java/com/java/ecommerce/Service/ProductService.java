@@ -48,6 +48,9 @@ public class ProductService {
         return productRepo.findById(id).isPresent();
     }
 
+    public Product getProduct(Integer productId){
+        return productRepo.findById(productId).get();
+    }
     public void updateProduct(ProductDto productDto, Category category, Integer productId) {
         Optional<Product> product = productRepo.findById(productId);
         Product newProduct = product.get();

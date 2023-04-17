@@ -24,6 +24,13 @@ public class UserService {
         return false;
     }
 
+    public boolean isuserIdPresent(Integer userId){
+        return userRepo.findById(userId).isPresent();
+    }
+
+    public User getUserById(Integer userId){
+        return userRepo.findById(userId).get();
+    }
     public void createNewUser(User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String hashedPassword = passwordEncoder.encode(user.getPassword());
